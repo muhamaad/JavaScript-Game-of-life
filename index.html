@@ -1,0 +1,56 @@
+<html><head>
+        <link href="bootstarp/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="style/main.css" rel="stylesheet" type="text/css">
+        <script src="js/jquery-2.1.1.js"></script>
+        <script src="js/cell.js"></script>
+        <script src="js/grid.js"></script>
+        <script src="js/spaceCanvas.js"></script>
+        <script src="js/gameController.js"></script>
+        <script src="js/jscolor/jscolor.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            var controller;
+            $(document).ready(function(){
+   
+                controller=new GameController('myCanvas','#parent',10,900,900,600,600);
+   
+                $('#start').click(function(){
+                    var genTime= 100;
+                    controller.start(genTime, 6);
+                });
+    
+                $('#stop').click(function(){
+                    controller.stop();
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <canvas id="myCanvas" width="900px" height="500px" style="border:2px solid #000000;" class="panel"> </canvas>
+        </div>
+        <br/>
+        <div>
+            <div class="rol">
+                <div class="col-md-4">
+                    <span> Generation Time : &nbsp100ms </span>
+                </div>
+                <div class="col-md-4">
+                    <span> Seeds: &nbspR-pentomino </span>
+                </div>
+                <div class="col-md-4">
+                    <div class="pull-left">
+                        <input type="image" src="style/start.png" alt="Start" height="42" width="42" id="start">
+                    </div>
+                    <div class="pull-right">
+                        <input type="image" src="style/stop.png" alt="Stop" height="42" width="42" id="stop">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+</body></html>
